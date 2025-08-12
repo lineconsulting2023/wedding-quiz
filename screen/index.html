@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Screen | Wedding Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/lib/style.css" />
+  <script src="https://cdn.ably.com/lib/ably.min-1.js"></script>
+  <script src="/config.js"></script>
+  <script src="/lib/ably.js"></script>
+</head>
+<body>
+<div class="container">
+  <h1>スクリーン / Screen</h1>
+
+  <div id="connectBox" class="card grid grid-1">
+    <label>ルーム名（未入力なら既定を使用）<br/><input id="room" placeholder="RYOTA-WED"/></label>
+    <button id="connectBtn">接続する</button>
+  </div>
+
+  <div id="screen" class="card grid grid-1">
+    <div><span class="badge">状態</span> <span id="status"></span></div>
+    <div class="big center" id="phase">待機</div>
+    <h2 id="qtext">次の問題を待っています…</h2>
+    <div id="choices" style="font-size:20px;"></div>
+
+    <h3>この問題の結果（上位10名）</h3>
+    <div id="results"></div>
+
+    <h3>総合順位（上位10名）</h3>
+    <div id="leaderboard"></div>
+  </div>
+</div>
+<script src="/screen/app.js"></script>
+</body>
+</html>
