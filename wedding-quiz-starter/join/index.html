@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Join | Wedding Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/lib/style.css" />
+  <script src="https://cdn.ably.com/lib/ably.min-1.js"></script>
+  <script src="/config.js"></script>
+  <script src="/lib/ably.js"></script>
+</head>
+<body>
+<div class="container">
+  <h1>参加者 / Join</h1>
+  <div id="joinBox" class="card grid grid-1">
+    <label>ルーム名（未入力なら既定を使用）<br/><input id="room" placeholder="RYOTA-WED"/></label>
+    <label>ニックネーム<br/><input id="name" placeholder="ゲスト"/></label>
+    <button id="joinBtn">入室する</button>
+  </div>
+
+  <div id="quiz" class="card grid grid-1">
+    <div><span class="badge">状態</span> <span id="status"></span></div>
+    <h2 id="qtext">次の問題を待っています…</h2>
+    <div class="grid grid-2">
+      <button class="choice" id="c0">A</button>
+      <button class="choice" id="c1">B</button>
+      <button class="choice" id="c2">C</button>
+      <button class="choice" id="c3">D</button>
+    </div>
+    <div id="answered" style="margin-top:12px;"></div>
+    <div class="footer">room: <span id="phase">idle</span></div>
+  </div>
+</div>
+<script src="/join/app.js"></script>
+</body>
+</html>
